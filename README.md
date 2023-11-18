@@ -142,7 +142,8 @@ As shown in the graph, the p-value we get from the permutation tesing is xxx,  s
 ## Permutation Test
 Going back to our investigation topic, we are investigating if there is an increasing trend of cooking minutes in recent years. So far, we have  seen in fact seen a genearlly increasing trend of Mean cooking minutes and Median cooking minutes from 2008 to 2018, but observation alone cannot be a good indicator as to whether this trend shows actual change in people’s preference or is the trend merely coincidental. 
 
-1. Permutation test on cooking time of year 2008 and 2018. Since 2008 and 2018 are most far away from each other, a testing on them can probably show a more obvious result. 
+1. Permutation test on cooking time of year 2008 and 2018. 
+Since 2008 and 2018 are most far away from each other, a testing on them can probably show a more obvious result. 
 Thus, a permutation test is conducted by shuffling the 'year' column. 
 Null Hypothesis: The cooking time of year 2008 is from the same distribution as cooking time of year 2018. 
 Alternative Hypothesis: The cooking time of year 2018 is longer than the cooking time of year 2008. 
@@ -150,19 +151,20 @@ Significance Level: 5%
 Test Statistics used here is Mean cooking time of year 2018 - Mean cooking time of year 2008
 
 
-The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. F
+The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. 
 Picture her 
 
 From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of 2018 is higher than cooking time 0f 2008. 
 
-2. Since the Permutation test on year 2008 and year 2018 aligns with my hypothesis, I continued to investigate the relationship by categorizing the years from 2008-2018 to two bins and performing Permutation test on distributions of these two bins. I set Bin1: 2008-2013 , and Bin2: 2014-2018. In this way, a more general trend can be investigated, by comparing cooking time of first five years and later five years. 
+2. Permutation test on cooking time of years 2008-2013 and 2014-2018.
+Since the Permutation test on year 2008 and year 2018 aligns with my hypothesis, I continued to investigate the relationship by categorizing the years from 2008-2018 to two bins and performing Permutation test on distributions of these two bins. I set Bin1: 2008-2013 , and Bin2: 2014-2018. In this way, a more general trend can be investigated, by comparing cooking time of first five years and later five years. 
 Similarly, a permutation test is conducted by shuffling the 'bin' column. 
 Null Hypothesis: The cooking time of Bin1 is from the same distribution as cooking time of Bin2. 
 Alternative Hypothesis: The cooking time of year Bin1 is longer than the cooking time of Bin2. 
 Significance Level: 5% 
 Test Statistics used here is Mean cooking time of year Bin2 - Mean cooking time of year Bin1. 
 
-The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. F
+The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. 
 Picture her 
 
 From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of year 2014-2018 is higher than cooking time 0f 2008 -2013. 
