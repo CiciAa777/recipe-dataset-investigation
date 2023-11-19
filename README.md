@@ -1,5 +1,3 @@
-# Recipe-dataset-investigation
-
 # An investigation on the Trend of Cooking Time Over Years
 **Authors**: Cici Xu 
 
@@ -89,22 +87,22 @@ With cleaned data, we proceed to look at the distribution of the recipes' cookin
 | max | 1.051200e+06|
 
 2. The Box plot below also shows distribution of cooking minutes with some huge outliers. 
-<iframe src="assets/cooking_time_boxplot.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/cooking_time_boxplot.html" width=800 height=600 frameBorder=0></iframe>
 
 3. Outliers are then handled by filtering the dataset with a threshold of the 97th percentile of the cooking minutes. 
 
 4. The histogram below shows the  Distribution of number of recipe posted in each Year: From the graph, it can be observed that number of recipes posted have been derecreasing since 2009. It's important to note that the huge difference in number of recipoe posted each year can affect the result we get by looking at the relationship between cooking minutes and year using this dataset. 
-<iframe src="assets/recipe_each_year.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/recipe_each_year.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Bivariate Analysis
 1. Histogram of Cooking time by year (with unfiltered data) 
-<iframe src="assets/cooking_time_by_year.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/cooking_time_by_year.html" width=800 height=600 frameBorder=0></iframe>
 
 2. Boxplot of Cooking time by year (with filtered data): From the boxplot, median of cooking time seem to remain at 35 minutes from 2008 and 2013, and the median cooking time flucuate to some longer minutes during 2014-2018. 
-<iframe src="assets/cooking_time_by_year_box.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/cooking_time_by_year_box.html" width=800 height=600 frameBorder=0></iframe>
 
 3. Scatterplot of Mean Cooking time by year (with filtered data): This scatter plot shows a very obvious increasing trend of cooking time throughout years from 2013-2014. 
-<iframe src="assets/mean_cooking_time_by_year_scat.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/mean_cooking_time_by_year_scat.html" width=800 height=600 frameBorder=0></iframe>
 
 
 ## Aggregate Statistics using a pivot table: 
@@ -128,7 +126,7 @@ Alternative Hypothesis: The missingness of rating depend on minutes
 To perform permutation testing: I created a new colummn 'rating_miss' to indicate the missingness status of the rating, and shuffled the 'minutes' column for our permutation. Since minutes is numeric, we used the absolute mean difference of minutes of missing rating data and non-missing missting rating data as the test staistics. 
 
 Below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
-<iframe src="assets/test_stats_1.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/test_stats_1.html" width=800 height=600 frameBorder=0></iframe>
 
 
 As shown in the graph, the p-value we get from the permutation tesing is 0, much greater than our significance level of 5%, so we fail to reject the null hypothesis.Therefore, we conclude that it is highly possible that the missingness of rating does not depend on minutes column.
@@ -140,7 +138,7 @@ Alternative Hypothesis: The missingness of rating depend on calories (#)
 Similarly to perform permutation testing:, I created a new column indicating the missingness of rating, and shuffled this column for permutation. We use the absolute mean difference of calories of minutes of missing rating data and non-missing. 
 
 Below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
-<iframe src="assets/test_stats_2.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/test_stats_2.html" width=800 height=600 frameBorder=0></iframe>
 
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
@@ -160,7 +158,7 @@ Test Statistics used here is Mean cooking time of year 2018 - Mean cooking time 
 
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. 
-<iframe src="assets/test_stats_3.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/test_stats_3.html" width=800 height=600 frameBorder=0></iframe>
 
 
 From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of 2018 is higher than cooking time 0f 2008. 
@@ -174,7 +172,7 @@ Significance Level: 5%
 Test Statistics used here is Mean cooking time of year Bin2 - Mean cooking time of year Bin1. 
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. 
-<iframe src="assets/test_stats_4.html" width=400 height=300 frameBorder=0></iframe>
+<iframe src="assets/test_stats_4.html" width=800 height=600 frameBorder=0></iframe>
 
 
 From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of year 2014-2018 is higher than cooking time 0f 2008 -2013. 
