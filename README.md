@@ -25,6 +25,15 @@ The main dataset used (Recipes) contains information on 83,782 recipes from 2008
 | steps           | Text for recipe steps, in order                 |
 | description     | User-provided description                        |
 
+| Column | Description |
+| ----------- | ----------- |
+| name 	|Recipe name  | 
+| id  | Recipe ID  |
+| minutes  | Minutes to prepare recipe | 
+| contributor_id  |  User ID who submitted this recipe| 
+| 42903 | 300597 | 
+| 42906 | 327285 | 
+
 Another dataset (Ratings) which contains people's ratings and comments on recipes is also used. This dataset has a total of 731,927 reviews, with 5 columns as listed below:
 
 | Column      | Description             |
@@ -76,14 +85,14 @@ With cleaned data, we proceed to look at the distribution of the recipes' cookin
 
 | Column | Description |
 | ----------- | ----------- |
-| count | 8.378200e+04
-| mean | 1.150309e+02
-| std | 3.990871e+03
-| min | 0.000000e+00
-| 25% | 2.000000e+01
-| 50% | 3.500000e+01
-| 75% | 6.500000e+01
-| max | 1.051200e+06
+| count | 8.378200e+04|
+| mean | 1.150309e+02|
+| std | 3.990871e+03|
+| min | 0.000000e+00|
+| 25% | 2.000000e+01|
+| 50% | 3.500000e+01|
+| 75% | 6.500000e+01|
+| max | 1.051200e+06|
 
 2. The Box plot below also shows distribution of cooking minutes with some huge outliers. 
 <iframe src="assets/cooking_time_boxplot.html" width=800 height=600 frameBorder=0></iframe>
