@@ -4,7 +4,7 @@
 **Authors**: Cici Xu 
 
 ## Project Overview 
-This is data science project on investigatng the relationship between cooking time and year by conducting permutation testings.  This is a course project for DSC80- Practice and Application of Data Science at UCSD. 
+This data science project investigates the relationship between cooking time and year by conducting permutation testings.  This is a course project for DSC80- Practice and Application of Data Science at UCSD. 
 
 ## Introduction 
 While human beings are stepping into more efficient and fast-paced lifestyle where people seem to spend less time on cooking, there is in fact a  trend of self-care, where people enjoy spending time on cooking themselves to give themselves some space and enjoy time of their own. And the increasing workout rate also brings more people to start spending ime cooking for a healthier diet or making themselves a delicate and cost-effective dishe. ** Thus, based on this observation, this project aims to investigate whether people are spenidng more time on cooking throughout the years using dataset from a recipe website.** 
@@ -45,7 +45,7 @@ Another dataset (Ratings) which contains peoples' ratings and comments on recipe
 
 4. Add the series of average_ratig per recipe back to dataframe using transform method.
 
-After the steps above, I combined the two datasets and get a general overview of the merged data. Since I'm investigating into possible relationship between cooking time and years, columns needed are the 'date' and 'time' columns in the Recipes dataset. Thus, the following steps focus on cleaning the Recipes Dataset and extracting necessary information. 
+   After the steps above, I combined the two datasets and get a general overview of the merged data. Since I'm investigating into possible relationship between cooking time and years, columns needed are the 'date' and 'time' columns in the Recipes dataset. Thus, the following steps focus on cleaning the Recipes Dataset and extracting necessary information. 
 
 5. Convert columns in Recipes dataset into correct types: 'id' column is converted from integer to string, and 'date' column is converted from string to datetime object. 
 
@@ -55,7 +55,7 @@ After the steps above, I combined the two datasets and get a general overview of
 
 6. Sort data by year. 
 
-After data cleaning, dataframe df contains information on recipe ID, year and date each recipe is posted, and the cooking time of t each recipe. 
+   After data cleaning, dataframe df contains information on recipe ID, year and date each recipe is posted, and the cooking time of each recipe. 
 
 | Column | Description |
 | ----------- | ----------- |
@@ -84,27 +84,28 @@ With cleaned data, we proceed to look at the distribution of the recipes' cookin
 | max | 1.051200e+06
 
 2. The Box plot below also shows distribution of cooking minutes with some huge outliers. 
-picture here 
+<iframe src="assets/cooking_time_boxplot.html" width=800 height=600 frameBorder=0></iframe>
 
 3. Outliers are then handled by filtering the dataset with a threshold of the 97th percentile of the cooking minutes. 
-picture here 
 
 4. The histogram below shows the  Distribution of number of recipe posted in each Year: From the graph, it can be observed that number of recipes posted have been derecreasing since 2009. It's important to note that the huge difference in number of recipoe posted each year can affect the result we get by looking at the relationship between cooking minutes and year using this dataset. 
-picture here 
+<iframe src="assets/recipe_each_year.html" width=800 height=600 frameBorder=0></iframe>
 
 ## Bivariate Analysis
 1. Histogram of Cooking time by year (with unfiltered data) 
-picture here 
+<iframe src="assets/cooking_time_by_year.html" width=800 height=600 frameBorder=0></iframe>
 
 2. Boxplot of Cooking time by year (with filtered data): From the boxplot, median of cooking time seem to remain at 35 minutes from 2008 and 2013, and the median cooking time flucuate to some longer minutes during 2014-2018. 
-picture here 
+<iframe src="assets/cooking_time_by_year_box.html" width=800 height=600 frameBorder=0></iframe>
 
 3. Scatterplot of Mean Cooking time by year (with filtered data): This scatter plot shows a very obvious increasing trend of cooking time throughout years from 2013-2014. 
-picture here 
+<iframe src="assets/mean_cooking_time_by_year_scat.html" width=800 height=600 frameBorder=0></iframe>
 
-## Aggregate Statistics using a pivot table: This pivot table shows the statistics including mean, median, min, max standard deviation, and count of cooking time in each year using a filtered dataset. 
 
-picture here 
+## Aggregate Statistics using a pivot table: 
+This pivot table shows the statistics including mean, median, min, max standard deviation, and count of cooking time in each year using a filtered dataset. 
+
+picture here - not sure 
 
 # Assessment of Missingness
 ## NMAR Analysis
@@ -115,25 +116,27 @@ and not related to other columns in the dataset. This is because, people may cho
 ## MAR analysis 
 In the merged dataset, there are many missing values in the 'rating' columns, and the missingness of this column data might depend on other columns. I focused on assessing dependency between missingess of rating with two possible column data: minutes and calories by permutation testing. 
 
-1. Rating and Minutes (MCAR)
+### 1. Rating and Minutes (MCAR)
 Null Hypothesis: The missingness of rating does not depend on minutes
 Alternative Hypothesis: The missingness of rating depend on minutes
 
 To perform permutation testing: I created a new colummn 'rating_miss' to indicate the missingness status of the rating, and shuffled the 'minutes' column for our permutation. Since minutes is numeric, we used the absolute mean difference of minutes of missing rating data and non-missing missting rating data as the test staistics. 
 
 Below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
-picture here 
+<iframe src="assets/test_stats_1.html" width=800 height=600 frameBorder=0></iframe>
+
 
 As shown in the graph, the p-value we get from the permutation tesing is xxx, much greater than our significance level of 5%, so we fail to reject the null hypothesis.Therefore, we conclude that it is highly possible that the missingness of rating does not depend on minutes column.
 
-2. Rating and Calories (MAR)
+### 2. Rating and Calories (MAR)
 Null Hypothesis: The missingness of rating does not depend on calories (#)
 Alternative Hypothesis: The missingness of rating depend on calories (#)
 
 Similarly to perform permutation testing:, I created a new column indicating the missingness of rating, and shuffled this column for permutation. We use the absolute mean difference of calories of minutes of missing rating data and non-missing. 
 
 Below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
-picture here 
+<iframe src="assets/test_stats_2.html" width=800 height=600 frameBorder=0></iframe>
+
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
 As shown in the graph, the p-value we get from the permutation tesing is xxx,  significantly less than our significance level of 5%, so we reject the null hypothesis. Hence, we conclude that the missingness of rating depends on the calories column
@@ -142,7 +145,7 @@ As shown in the graph, the p-value we get from the permutation tesing is xxx,  s
 ## Permutation Test
 Going back to our investigation topic, we are investigating if there is an increasing trend of cooking minutes in recent years. So far, we have  seen in fact seen a genearlly increasing trend of Mean cooking minutes and Median cooking minutes from 2008 to 2018, but observation alone cannot be a good indicator as to whether this trend shows actual change in people’s preference or is the trend merely coincidental. 
 
-1. Permutation test on cooking time of year 2008 and 2018. 
+### 1. Permutation test on cooking time of year 2008 and 2018. 
 Since 2008 and 2018 are most far away from each other, a testing on them can probably show a more obvious result. 
 Thus, a permutation test is conducted by shuffling the 'year' column. 
 Null Hypothesis: The cooking time of year 2008 is from the same distribution as cooking time of year 2018. 
@@ -152,11 +155,12 @@ Test Statistics used here is Mean cooking time of year 2018 - Mean cooking time 
 
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. 
-Picture her 
+<iframe src="assets/test_stats_3.html" width=800 height=600 frameBorder=0></iframe>
+
 
 From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of 2018 is higher than cooking time 0f 2008. 
 
-2. Permutation test on cooking time of years 2008-2013 and 2014-2018.
+### 2. Permutation test on cooking time of years 2008-2013 and 2014-2018.
 Since the Permutation test on year 2008 and year 2018 aligns with my hypothesis, I continued to investigate the relationship by categorizing the years from 2008-2018 to two bins and performing Permutation test on distributions of these two bins. I set Bin1: 2008-2013 , and Bin2: 2014-2018. In this way, a more general trend can be investigated, by comparing cooking time of first five years and later five years. 
 Similarly, a permutation test is conducted by shuffling the 'bin' column. 
 Null Hypothesis: The cooking time of Bin1 is from the same distribution as cooking time of Bin2. 
@@ -165,6 +169,7 @@ Significance Level: 5%
 Test Statistics used here is Mean cooking time of year Bin2 - Mean cooking time of year Bin1. 
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics. 
-Picture her 
+<iframe src="assets/test_stats_4.html" width=800 height=600 frameBorder=0></iframe>
+
 
 From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of year 2014-2018 is higher than cooking time 0f 2008 -2013. 
