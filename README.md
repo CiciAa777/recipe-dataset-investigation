@@ -10,29 +10,31 @@ This data science project investigates the relationship between cooking time and
 While human beings are stepping into more efficient and fast-paced lifestyle where people seem to spend less time on cooking, there is in fact a  trend of self-care, where people enjoy spending time on cooking themselves to give themselves some space and enjoy time of their own. And the increasing workout rate also brings more people to start spending ime cooking for a healthier diet or making themselves a delicate and cost-effective dishe. ** Thus, based on this observation, this project aims to investigate whether people are spenidng more time on cooking throughout the years using dataset from a recipe website.** 
 
 ## Datasets in the study 
-The main dataset used (Recipes) contains information of 83782 recipes from 2008 to 2018 on food.com, with 10 columns as shown in the table below. 
-| Column | Description |
-| ----------- | ----------- |
-| Column | Description |
-| 'name' | Recipe name |
-| 'id' | Recipe ID |
-| 'minutes'	| Minutes to prepare recipe |
-| 'contributor_id' | User ID who submitted this recipe |
-| 'submitted' | Date recipe was submitted |
-| 'tags' | Food.com tags for recipe |
-| 'nutrition' | Nutrition information in the form [calories (#), total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for “percentage of daily value” |
-| 'n_steps'	| Number of steps in recipe |
-| 'steps' | Text for recipe steps, in order |
-| 'description' | User-provided description |
+The main dataset used (Recipes) contains information on 83,782 recipes from 2008 to 2018 on food.com, with 10 columns as shown in the table below.
 
-Another dataset (Ratings) which contains peoples' ratings and comments on recipes is also used. This dataset has in total 731,927 reviews, with 5 columns as listed below: 
-| Column | Description |
-| ----------- | ----------- |
-|'user_id' | User ID |
-|'recipe_id' | Recipe ID |
-|'date' | Date of interaction |
-|'rating' | Rating given |
-|'review' | Review text |
+| Column          | Description                                     |
+| --------------- | ----------------------------------------------- |
+| name            | Recipe name                                     |
+| id              | Recipe ID                                       |
+| minutes         | Minutes to prepare recipe                       |
+| contributor_id  | User ID who submitted this recipe               |
+| submitted       | Date recipe was submitted                       |
+| tags            | Food.com tags for recipe                        |
+| nutrition       | Nutrition information in the form [calories, total fat (PDV), sugar (PDV), sodium (PDV), protein (PDV), saturated fat (PDV), carbohydrates (PDV)]; PDV stands for "percentage of daily value" |
+| n_steps         | Number of steps in recipe                       |
+| steps           | Text for recipe steps, in order                 |
+| description     | User-provided description                        |
+
+Another dataset (Ratings) which contains people's ratings and comments on recipes is also used. This dataset has a total of 731,927 reviews, with 5 columns as listed below:
+
+| Column      | Description             |
+| ----------- | ----------------------- |
+| user_id     | User ID                 |
+| recipe_id   | Recipe ID               |
+| date        | Date of interaction     |
+| rating      | Rating given            |
+| review      | Review text             |
+
 
 # Cleaning Data and Exploratory Data Analysis 
 ## Data Cleaning 
