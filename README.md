@@ -7,7 +7,7 @@
 This data science project investigates the relationship between cooking time and year by conducting permutation testings.  This is a course project for DSC80- Practice and Application of Data Science at UCSD. 
 
 ## Introduction 
-While human beings are stepping into more efficient and fast-paced lifestyle where people seem to spend less time on cooking, there is in fact a  trend of self-care, where people enjoy spending time on cooking themselves to give themselves some space and enjoy time of their own. And the increasing workout rate also brings more people to start spending ime cooking for a healthier diet or making themselves a delicate and cost-effective dishe. ** Thus, based on this observation, this project aims to investigate whether people are spenidng more time on cooking throughout the years using dataset from a recipe website.** 
+While human beings are stepping into more efficient and fast-paced lifestyle where people seem to spend less time on cooking, there is in fact a  trend of self-care, where people enjoy spending time on cooking themselves to give themselves some space and enjoy time of their own. And the increasing workout rate also brings more people to start spending ime cooking for a healthier diet or making themselves a delicate and cost-effective dishe. **Thus, based on this observation, this project aims to investigate whether people are spenidng more time on cooking throughout the years using dataset from a recipe website.** 
 
 ## Datasets in the study 
 The main dataset used (Recipes) contains information on 83,782 recipes from 2008 to 2018 on food.com, with 10 columns as shown in the table below.
@@ -59,8 +59,7 @@ Another dataset (Ratings) which contains people's ratings and comments on recipe
 6. Sort data by year. 
 
    After data cleaning, dataframe df contains information on recipe ID, year and date each recipe is posted, and the cooking time of each recipe. 
-   First five rows of the dataframe are displayed below. 
-
+   First five rows of the dataframe df after cleaning are displayed below. 
 print(merged[['name','id','minutes','contributor_id','submitted', 'tags', 'nutrition','n_steps','steps','description', 'ingredients','n_ingredients', 'user_id', 'recipe_id	date', 'rating', 'review','rating_per_recipe']].head().to_markdown(index=False))
 
 | Column | Description |
@@ -76,7 +75,7 @@ print(merged[['name','id','minutes','contributor_id','submitted', 'tags', 'nutri
 ## Univariate Analysis
 With cleaned data, we proceed to look at the distribution of the recipes' cooking time and the distribution of years in which recipes were posted. 
 
-1. Statistics about cooking time shows a cooking mean time of around 115 minutes, which is way much higher than the cooking median time of 35 minutes. This combined with the maximum cooking time indicates that there seem to be a lot of huge outliers of cooking time that largely affects the mean value. 
+1. The Statistics below shows a cooking mean time of around 115 minutes, which is way much higher than the cooking median time of 35 minutes. This combined with the maximum cooking time indicates that there seem to be a lot of huge outliers of cooking time that largely affects the mean value. 
 
 | Column | Description |
 | ----------- | ----------- |
@@ -132,7 +131,7 @@ Below shows the empirical distribution of our test statistics in 1000 permutatio
 <iframe src="assets/test_stats_1.html" width=400 height=300 frameBorder=0></iframe>
 
 
-As shown in the graph, the p-value we get from the permutation tesing is xxx, much greater than our significance level of 5%, so we fail to reject the null hypothesis.Therefore, we conclude that it is highly possible that the missingness of rating does not depend on minutes column.
+As shown in the graph, the p-value we get from the permutation tesing is 0, much greater than our significance level of 5%, so we fail to reject the null hypothesis.Therefore, we conclude that it is highly possible that the missingness of rating does not depend on minutes column.
 
 ### 2. Rating and Calories (MAR)
 Null Hypothesis: The missingness of rating does not depend on calories (#)
@@ -145,7 +144,7 @@ Below shows the empirical distribution of our test statistics in 1000 permutatio
 
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
-As shown in the graph, the p-value we get from the permutation tesing is xxx,  significantly less than our significance level of 5%, so we reject the null hypothesis. Hence, we conclude that the missingness of rating depends on the calories column
+As shown in the graph, the p-value we get from the permutation tesing is 0,  significantly less than our significance level of 5%, so we reject the null hypothesis. Hence, we conclude that the missingness of rating depends on the calories column
 
 # Hypothesis Testing
 ## Permutation Test
