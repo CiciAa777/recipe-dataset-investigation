@@ -176,3 +176,6 @@ The plot below shows the empirical distribution of our test statistics in 1000 p
 
 
 From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of year 2014-2018 is higher than cooking time 0f 2008 -2013. 
+
+# Conclusion:
+From the two tests conducted above, I conclude that the observed test statistics in the dataset shows strong evidence against the null hypothesis that cooking time of year 2008 and year 2018/cooking time of year 2008-2013 and year 2014-2018 are from the same distribution. Hence, we reject that there isn’t an increase in cooking time over the decade from 2008 to 2018. Although more evidence are probably needed to get futher conclusions or explanations, this trend is likely due to people's increasing interest in home cook big dishes or increased investment in self-care by cooking. 
