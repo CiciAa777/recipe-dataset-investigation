@@ -4,7 +4,7 @@
 ## Project Overview 
 This data science project investigates the relationship between cooking time and year by conducting permutation testings.  This is a course project for DSC80- Practice and Application of Data Science at UCSD. 
 
-## Introduction 
+# Introduction 
 While human beings are stepping into more efficient and fast-paced lifestyle where people seem to spend less time on cooking, there is in fact a  trend of self-care, where people enjoy spending time on cooking themselves to give themselves some space and enjoy time of their own. And the increasing workout rate also brings more people to start spending ime cooking for a healthier diet or making themselves a delicate and cost-effective dishe. **Thus, based on this observation, this project aims to investigate whether people are spenidng more time on cooking throughout the years using dataset from a recipe website.** 
 
 ## Datasets in the study 
@@ -50,25 +50,16 @@ Another dataset (Ratings) which contains people's ratings and comments on recipe
 
 5. Convert columns in Recipes dataset into correct types: 'id' column is converted from integer to string, and 'date' column is converted from string to datetime object. 
 
-4. Create a "year" and a "month" column.
+6. Create a "year" and a "month" column.
 
-5. retrieve needed columns "id", year","minutes","date", and put them into a smaller dataframe df.
+7. retrieve needed columns "id", year","minutes","date", and put them into a smaller dataframe df.
 
-6. Sort data by year. 
+8. Sort data by year. 
 
    After data cleaning, dataframe df contains information on recipe ID, year and date each recipe is posted, and the cooking time of each recipe. 
    First five rows of the dataframe df after cleaning are displayed below. 
-print(merged[['name','id','minutes','contributor_id','submitted', 'tags', 'nutrition','n_steps','steps','description', 'ingredients','n_ingredients', 'user_id', 'recipe_id	date', 'rating', 'review','rating_per_recipe']].head().to_markdown(index=False))
 
-| Column | Description |
-| ----------- | ----------- |
-| id	| minutes | year| month | date|
-| 0 | 333281 | 40 |	2008 |	10|	2008-10-27|
-| 42898 | 317877 | 15 | 2008 |	8 |	2008-08-06|
-| 42901 | 313434 | 20 | 2008 |	7 |	2008-07-13|
-| 42903 | 300597 | 45 | 2008 |	4 |	2008-04-24|
-| 42906 | 327285 | 200 | 2008 |	9 |2008-09-25|
-
+'print(merged[['name','id','minutes','contributor_id','submitted', 'tags', 'nutrition','n_steps','steps','description', 'ingredients','n_ingredients', 'user_id', 'recipe_id	date', 'rating', 'review','rating_per_recipe']].head().to_markdown(index=False))'
 
 ## Univariate Analysis
 With cleaned data, we proceed to look at the distribution of the recipes' cooking time and the distribution of years in which recipes were posted. 
@@ -108,12 +99,12 @@ With cleaned data, we proceed to look at the distribution of the recipes' cookin
 ## Aggregate Statistics using a pivot table: 
 This pivot table shows the statistics including mean, median, min, max standard deviation, and count of cooking time in each year using a filtered dataset. First five rows of the pivot table are diplayed below. 
 
-print(agg_stats_filtered[['mean', 'median', 'min', 'max', 'std', 'count']].head().to_markdown(index=False))
+'print(agg_stats_filtered[['mean', 'median', 'min', 'max', 'std', 'count']].head().to_markdown(index=False))'
 
 # Assessment of Missingness
 ## NMAR Analysis
-In the merged datast, the missingess of "review" columns is probably NMAR, that is the missingess of review might due to the variable itself, 
-and not related to other columns in the dataset. This is because, people may choose not to give any reivew because they probably don't have anything to comment on. However, this could also be related to other factors not in the dataset, such as people may not leave a review becuase they feel lazy, or because they don't enjoy posting things on social media at all. 
+**In the merged datast, the missingess of "review" columns is probably NMAR, that is the missingess of review might due to the variable itself, 
+and not related to other columns in the dataset.** This is because, people may choose not to give any reivew because they probably don't have anything to comment on. However, this could also be related to other factors not in the dataset, such as people may not leave a review becuase they feel lazy, or because they don't enjoy posting things on social media at all. 
 
 
 ## MAR analysis 
@@ -129,24 +120,24 @@ Below shows the empirical distribution of our test statistics in 1000 permutatio
 <iframe src="assets/test_stats_1.html" width=800 height=600 frameBorder=0></iframe>
 
 
-As shown in the graph, the p-value we get from the permutation tesing is 0, much greater than our significance level of 5%, so we fail to reject the null hypothesis.Therefore, we conclude that it is highly possible that the missingness of rating does not depend on minutes column.
+As shown in the graph, the p-value we get from the permutation tesing is 0, much greater than our significance level of 5%, so it fails to reject the null hypothesis.**Therefore, we conclude that it is highly possible that the missingness of rating does not depend on minutes column.**
 
 ### 2. Rating and Calories (MAR)
 Null Hypothesis: The missingness of rating does not depend on calories (#)
 Alternative Hypothesis: The missingness of rating depend on calories (#)
 
-Similarly to perform permutation testing:, I created a new column indicating the missingness of rating, and shuffled this column for permutation. We use the absolute mean difference of calories of minutes of missing rating data and non-missing. 
+Similarly, to perform permutation testing: I created a new column indicating the missingness of rating, and shuffled this column for permutation. We use the absolute mean difference of calories of minutes of missing rating data and non-missing. 
 
 Below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
 <iframe src="assets/test_stats_2.html" width=800 height=600 frameBorder=0></iframe>
 
 
 The plot below shows the empirical distribution of our test statistics in 1000 permutations, the red line indicates the observed test statistics.
-As shown in the graph, the p-value we get from the permutation tesing is 0,  significantly less than our significance level of 5%, so we reject the null hypothesis. Hence, we conclude that the missingness of rating depends on the calories column
+As shown in the graph, the p-value we get from the permutation tesing is 0,  significantly less than our significance level of 5%, so we reject the null hypothesis. **Hence, we conclude that the missingness of rating depends on the calories column.**
 
 # Hypothesis Testing
 ## Permutation Test
-Going back to our investigation topic, we are investigating if there is an increasing trend of cooking minutes in recent years. So far, we have  seen in fact seen a genearlly increasing trend of Mean cooking minutes and Median cooking minutes from 2008 to 2018, but observation alone cannot be a good indicator as to whether this trend shows actual change in people’s preference or is the trend merely coincidental. 
+Going back to our investigation topic, we are investigating if there is an increasing trend of cooking minutes in recent years. So far, we have  seen in fact seen a genearlly increasing trend of Mean cooking minutes and Median cooking minutes from 2008 to 2018, but observation alone cannot be a good indicator as to whether this trend shows actual change in people’s preference or is the trend merely coincidental. Thus, two permutation tests were conducted to further investigate.
 
 ### 1. Permutation test on cooking time of year 2008 and 2018. 
 Since 2008 and 2018 are most far away from each other, a testing on them can probably show a more obvious result. 
@@ -161,7 +152,7 @@ The plot below shows the empirical distribution of our test statistics in 1000 p
 <iframe src="assets/test_stats_3.html" width=800 height=600 frameBorder=0></iframe>
 
 
-From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of 2018 is higher than cooking time 0f 2008. 
+** From the graph, p-value = 0 < 0.05, so we reject the null hypothesis, which mean it's highly possible that the cooking time of 2018 is higher than cooking time 0f 2008.**
 
 ### 2. Permutation test on cooking time of years 2008-2013 and 2014-2018.
 Since the Permutation test on year 2008 and year 2018 aligns with my hypothesis, I continued to investigate the relationship by categorizing the years from 2008-2018 to two bins and performing Permutation test on distributions of these two bins. I set Bin1: 2008-2013 , and Bin2: 2014-2018. In this way, a more general trend can be investigated, by comparing cooking time of first five years and later five years. 
@@ -175,7 +166,7 @@ The plot below shows the empirical distribution of our test statistics in 1000 p
 <iframe src="assets/test_stats_4.html" width=800 height=600 frameBorder=0></iframe>
 
 
-From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of year 2014-2018 is higher than cooking time 0f 2008 -2013. 
+** From the graph, p-value = 0 < 0.05, so we can reject the null hypothesis, which mean it's highly possible that the cooking time of year 2014-2018 is higher than cooking time 0f 2008 -2013. **
 
-# Conclusion:
+## Conclusion:
 From the two tests conducted above, I conclude that the observed test statistics in the dataset shows strong evidence against the null hypothesis that cooking time of year 2008 and year 2018/cooking time of year 2008-2013 and year 2014-2018 are from the same distribution. Hence, we reject that there isn’t an increase in cooking time over the decade from 2008 to 2018. Although more evidence are probably needed to get futher conclusions or explanations, this trend is likely due to people's increasing interest in home cook big dishes or increased investment in self-care by cooking. 
