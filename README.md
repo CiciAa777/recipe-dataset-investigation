@@ -51,19 +51,7 @@ Another dataset (Ratings) which contains people's ratings and comments on recipe
 
 6\. Convert columns in Recipes dataset into correct types: 'id' column is converted from integer to string, and 'date' column is converted from string to datetime object. 
 
-   After this steps above, I combined the two datasets and get a general overview of the merged data. First five rows of the merged data are displayed below. Only sixth coumns including 'name', 'id', 'minutes','description', 'rating', 'review' are displayed for clarity. 
-                                                                                                                                                                                                                      |
-| name                                | id     | rating | date       | minutes | rating | rating_per_recipe | nutrition_sp                                        | calories | total fat | sugar (PDV) | sodium | protein | saturated fat | carbohydrates |
-|-------------------------------------|--------|--------|------------|---------|--------|-------------------|----------------------------------------------------|----------|-----------|-------------|--------|---------|---------------|---------------|
-| 1 brownies in the world best ever   | 333281 | 4      | 2008-11-19 | 40      | 4      | 4                 | ['[138.4', ' 10.0', ' 50.0', ' 3.0', ' 3.0', ' 19.0', ' 6.0]'] | 138.4    | 10        | 50          | 3      | 3       | 19            | 6             |
-| 1 in canada chocolate chip cookies  | 453467 | 5      | 2012-01-26 | 45      | 5      | 5                 | ['[595.1', ' 46.0', ' 211.0', ' 22.0', ' 13.0', ' 51.0', ' 26.0]'] | 595.1    | 46        | 211         | 22     | 13      | 51            | 26            |
-| 412 broccoli casserole              | 306168 | 5      | 2008-12-31 | 40      | 5      | 5                 | ['[194.8', ' 20.0', ' 6.0', ' 32.0', ' 22.0', ' 36.0', ' 3.0]']    | 194.8    | 20        | 6           | 32     | 22      | 36            | 3             |
-|                                     |        |        |            |         |        |                   |                                                    |          |           |             |        |         |               |               |
-|                                     |        |        |            |         |        |                   |                                                    |          |           |             |        |         |               |               |
-| 412 broccoli casserole              | 306168 | 5      | 2009-04-13 | 40      | 5      | 5                 | ['[194.8', ' 20.0', ' 6.0', ' 32.0', ' 22.0', ' 36.0', ' 3.0]']    | 194.8    | 20        | 6           | 32     | 22      | 36            | 3             |
-| 412 broccoli casserole              | 306168 | 5      | 2013-08-02 | 40      | 5      | 5                 | ['[194.8', ' 20.0', ' 6.0', ' 32.0', ' 22.0', ' 36.0', ' 3.0]']    | 194.8    | 20        | 6           | 32     | 22      | 36            | 3             |
-
-   **Since I'm investigating into possible relationship between cooking time and years, columns needed are the 'date' and 'time' columns in the Recipes dataset.** Thus, the following steps focus on cleaning and extracting useful information from the Recipes Dataset. 
+   After this steps above, I combined the two datasets and get a general overview of the merged data. First five rows of the merged data are displayed below. Only sixth coumns including 'name', 'id', 'minutes','description', 'rating', 'review' are displayed for clarity. **Since I'm investigating into possible relationship between cooking time and years, columns needed are the 'date' and 'time' columns in the Recipes dataset.** Thus, the following steps focus on cleaning and extracting useful information from the Recipes Dataset. 
 
 7\. Create a "year" and a "month" column.
 
